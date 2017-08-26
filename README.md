@@ -8,4 +8,5 @@ Fork this project and clone into your computer by using this command. <br>
 And then, open this project on netbeans.
 
 ## Download
+Version - 1.0
 https://github.com/derickfelix/FlappyBird/files/1253391/flappybird.zip
