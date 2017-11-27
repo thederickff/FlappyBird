@@ -6,6 +6,7 @@
 package com.flappybird.view;
 
 import java.awt.Dimension;
+import java.awt.Toolkit;
 import javax.swing.JFrame;
 
 /**
@@ -17,7 +18,6 @@ public class Window {
     public static int HEIGHT = 600;
     public Window(int width, int height, String title, Game game) {
         JFrame frame = new JFrame();
-        
         frame.add(game);
         frame.setTitle(title);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -27,11 +27,12 @@ public class Window {
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
         frame.setVisible(true);
+        
     }
     public static void main(String[] args) {
         Game game = new Game();
         
-        /* Set the Nimbus look and feel */
+        /* Set the System look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 

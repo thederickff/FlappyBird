@@ -16,6 +16,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Rectangle;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
@@ -41,15 +42,16 @@ public class Game extends JPanel implements ActionListener {
 
         proxyImage = new ProxyImage("/assets/background.png");
         background = proxyImage.loadImage().getImage();
-        this.setFocusable(true);
-        this.setDoubleBuffered(false);
-        this.addKeyListener(new GameKeyAdapter());
+        setFocusable(true);
+        setDoubleBuffered(false);
+        addKeyListener(new GameKeyAdapter());
         Timer timer = new Timer(15, this);
         timer.start();
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        Toolkit.getDefaultToolkit().sync();
         if (isRunning) {
             ////////////////////////////////
             bird.tick();
@@ -122,7 +124,7 @@ public class Game extends JPanel implements ActionListener {
     // Key
     private class GameKeyAdapter extends KeyAdapter {
 
-        private Controller controller;
+        private final Controller controller;
 
         public GameKeyAdapter() {
             controller = new Controller();
